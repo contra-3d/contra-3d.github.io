@@ -68,7 +68,7 @@ function receive(data){
  if(me){
   if(!localActor||!me.alive||Math.hypot(localActor.x-me.x,localActor.z-me.z)>3||Math.abs(localActor.y-me.y)>2)localActor={...me};
   else{localActor.x+=(me.x-localActor.x)*.28;localActor.z+=(me.z-localActor.z)*.28;localActor.y+=(me.y-localActor.y)*.4;localActor.hp=me.hp;localActor.alive=me.alive;localActor.reload=me.reload;}
-  if(firstView){controls.yaw=me.yaw;controls.pitch=me.pitch;firstView=false;}
+  if(firstView){controls.yaw=Math.atan2(me.x,me.z);controls.pitch=0;firstView=false;}
  }
  for(const event of data.events||[]){if(event.id<=eventId)continue;eventId=event.id;handleEvent(event);}
  updateHud();
@@ -78,16 +78,16 @@ async function start(wantOnline){
  if(!ready)return;disconnect();playing=true;online=false;mode='loading';document.body.classList.add('playing');$('hud').hidden=false;weapon.visible=true;$('death').hidden=true;
  if(!touch&&!params.has('benchmark'))$('game').requestPointerLock?.()?.catch?.(()=>{});
  if(wantOnline){
-  $('net').textContent='ПОДКЛЮЧЕНИЕ К КОМНАТЕ…';
+  startLocal('ПОДКЛЮЧЕНИЕ К КОМНАТЕ · ПОКА ТРЕНИРОВКА');
   const config=await fetch('/config.json').then(r=>r.ok?r.json():{}).catch(()=>({}));
   const url=config.websocket||`${location.protocol==='https:'?'wss':'ws'}://${location.host}/ws`;
   await new Promise(resolve=>{
    let settled=false;const done=success=>{if(settled)return;settled=true;if(!success){ws?.close();ws=null;}resolve(success);};
-   try{ws=new WebSocket(url);ws.onopen=()=>{online=true;mode='online';ws.send(JSON.stringify({type:'name',name:$('nickname').value||'PLAYER'}));done(true);};ws.onmessage=e=>{try{receive(JSON.parse(e.data));}catch(error){console.error(error);}};ws.onerror=()=>done(false);ws.onclose=()=>{if(playing&&online){online=false;startLocal('СОЕДИНЕНИЕ ПРЕРВАНО · ТРЕНИРОВКА');}};}catch{done(false);}
-   setTimeout(()=>done(false),8000);
+   try{ws=new WebSocket(url);ws.onopen=()=>{if(worker){worker.onmessage=null;worker.terminate();worker=null;}online=true;mode='online';myId=null;localActor=null;firstView=true;ws.send(JSON.stringify({type:'name',name:$('nickname').value||'PLAYER'}));done(true);};ws.onmessage=e=>{try{receive(JSON.parse(e.data));}catch(error){console.error(error);}};ws.onerror=()=>{console.warn('Contra WebSocket did not connect:',url);done(false);};ws.onclose=()=>{if(playing&&online){online=false;startLocal('СОЕДИНЕНИЕ ПРЕРВАНО · ТРЕНИРОВКА');}};}catch(error){console.error('Contra connection:',error.message);done(false);}
+   setTimeout(()=>done(false),90000);
   });
  }
- if(!online)startLocal(wantOnline?'СЕРВЕР ПРОСЫПАЕТСЯ · ТРЕНИРОВКА':'ТРЕНИРОВКА · ТЫ + 9 БОТОВ');
+ if(!online){if(worker)$('net').textContent='СЕРВЕР НЕДОСТУПЕН · ТРЕНИРОВКА';else startLocal('ТРЕНИРОВКА · ТЫ + 9 БОТОВ');}
 }
 function startLocal(text){if(worker)worker.terminate();worker=new Worker('/training-worker.js',{type:'module'});worker.onmessage=e=>receive(e.data);worker.onerror=e=>{$('objective').textContent='Не удалось запустить тренировку: '+e.message;};worker.postMessage({type:'start',name:$('nickname').value||'PLAYER'});mode='training';$('net').textContent=text;}
 $('play').onclick=()=>start(true);$('train').onclick=()=>start(false);
