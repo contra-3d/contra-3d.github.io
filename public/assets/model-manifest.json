@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "sandstone",
+    "source": "sandstone.glb",
+    "triangles": 68280,
+    "size": [
+      111.48606872558594,
+      93.09339904785156,
+      16.358646392822266
+    ],
+    "height": 16.358646392822266,
+    "scaleFromSource": 60,
+    "blend": "F:\\ArenaLab\\contra\\art\\blender\\sandstone.blend",
+    "glb": "F:\\ArenaLab\\contra\\art\\staged\\sandstone.glb",
+    "url": "/assets/models/sandstone.glb",
+    "bytes": 4971284,
+    "stagedBytes": 34184496,
+    "compressionRatio": 6.876,
+    "sourceTextures": [
+      {
+        "name": "Sandstone_Cutout_2sided",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 2328619
+      },
+      {
+        "name": "Sandstone_Decal",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 5042140
+      },
+      {
+        "name": "wall5",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 4571691
+      },
+      {
+        "name": "wall1",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 5285522
+      },
+      {
+        "name": "wall3",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1483737
+      },
+      {
+        "name": "Sandstone_Atlas2",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 3372271
+      },
+      {
+        "name": "Sandstone_Atlas1",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 4082199
+      },
+      {
+        "name": "Sandstone_Atlas3",
+        "resolution": [
+          2048,
+          2048
+        ],
+        "mime": "image/png",
+        "bytes": 3707535
+      }
+    ],
+    "textures": [
+      {
+        "name": "Sandstone_Cutout_2sided",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 470996
+      },
+      {
+        "name": "Sandstone_Decal",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 995322
+      },
+      {
+        "name": "wall5",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 396228
+      },
+      {
+        "name": "wall1",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 479850
+      },
+      {
+        "name": "wall3",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 405038
+      },
+      {
+        "name": "Sandstone_Atlas2",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 332694
+      },
+      {
+        "name": "Sandstone_Atlas1",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 423856
+      },
+      {
+        "name": "Sandstone_Atlas3",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 354182
+      }
+    ],
+    "sourceGeometry": {
+      "triangles": 68280,
+      "vertices": 121551,
+      "primitives": 9
+    },
+    "vertices": 118775,
+    "primitives": 9,
+    "materials": 9,
+    "animations": [],
+    "estimatedTextureBytesRGBAWithMips": 44739243,
+    "maxTextureSize": 1024,
+    "previews": {
+      "overview": "/previews/sandstone-overview.webp",
+      "detail": "/previews/sandstone-detail.webp"
+    },
+    "extensionsRequired": [
+      "EXT_meshopt_compression",
+      "EXT_texture_webp",
+      "KHR_mesh_quantization"
+    ]
+  },
+  {
+    "id": "dust-classic",
+    "source": "de_dust_2_original__y_en_honor_a_justin_dejong.glb",
+    "triangles": 9318,
+    "size": [
+      94.78021240234375,
+      111.31511688232422,
+      12.918663024902344
+    ],
+    "height": 12.918663024902344,
+    "scaleFromSource": 1,
+    "blend": "F:\\ArenaLab\\contra\\art\\blender\\dust-classic.blend",
+    "glb": "F:\\ArenaLab\\contra\\art\\staged\\dust-classic.glb",
+    "url": "/assets/models/dust-classic.glb",
+    "bytes": 579392,
+    "stagedBytes": 1460976,
+    "compressionRatio": 2.522,
+    "sourceTextures": [
+      {
+        "name": "Image_0",
+        "resolution": [
+          64,
+          32
+        ],
+        "mime": "image/png",
+        "bytes": 5897
+      },
+      {
+        "name": "Image_1",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 74760
+      },
+      {
+        "name": "Image_2",
+        "resolution": [
+          128,
+          256
+        ],
+        "mime": "image/png",
+        "bytes": 28749
+      },
+      {
+        "name": "Image_3",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 15871
+      },
+      {
+        "name": "Image_4",
+        "resolution": [
+          256,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 37846
+      },
+      {
+        "name": "Image_5",
+        "resolution": [
+          256,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 36342
+      },
+      {
+        "name": "Image_6",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 75568
+      },
+      {
+        "name": "Image_7",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 42822
+      },
+      {
+        "name": "Image_8",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 15716
+      },
+      {
+        "name": "Image_9",
+        "resolution": [
+          32,
+          32
+        ],
+        "mime": "image/png",
+        "bytes": 69
+      },
+      {
+        "name": "Image_10",
+        "resolution": [
+          256,
+          256
+        ],
+        "mime": "image/png",
+        "bytes": 6600
+      },
+      {
+        "name": "Image_11",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 4203
+      },
+      {
+        "name": "Image_12",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 17252
+      },
+      {
+        "name": "Image_13",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 36162
+      },
+      {
+        "name": "Image_14",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 3539
+      },
+      {
+        "name": "Image_15",
+        "resolution": [
+          256,
+          256
+        ],
+        "mime": "image/png",
+        "bytes": 62088
+      },
+      {
+        "name": "Image_16",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 36161
+      },
+      {
+        "name": "Image_17",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 42767
+      },
+      {
+        "name": "Image_18",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 36605
+      },
+      {
+        "name": "Image_19",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 36113
+      },
+      {
+        "name": "Image_20",
+        "resolution": [
+          32,
+          32
+        ],
+        "mime": "image/png",
+        "bytes": 74
+      },
+      {
+        "name": "Image_21",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 36215
+      },
+      {
+        "name": "Image_22",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 41329
+      },
+      {
+        "name": "Image_23",
+        "resolution": [
+          256,
+          256
+        ],
+        "mime": "image/png",
+        "bytes": 65011
+      },
+      {
+        "name": "Image_24",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 17236
+      },
+      {
+        "name": "Image_25",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 35679
+      },
+      {
+        "name": "Image_26",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 85733
+      },
+      {
+        "name": "Image_27",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/png",
+        "bytes": 42770
+      },
+      {
+        "name": "Image_28",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 4411
+      },
+      {
+        "name": "Image_29",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 4483
+      },
+      {
+        "name": "Image_30",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 4241
+      },
+      {
+        "name": "Image_31",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 3208
+      },
+      {
+        "name": "Image_32",
+        "resolution": [
+          16,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 728
+      },
+      {
+        "name": "Image_33",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/png",
+        "bytes": 4737
+      }
+    ],
+    "textures": [
+      {
+        "name": "Image_0",
+        "resolution": [
+          64,
+          32
+        ],
+        "mime": "image/webp",
+        "bytes": 1986
+      },
+      {
+        "name": "Image_1",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 18594
+      },
+      {
+        "name": "Image_2",
+        "resolution": [
+          128,
+          256
+        ],
+        "mime": "image/webp",
+        "bytes": 18898
+      },
+      {
+        "name": "Image_3",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 11546
+      },
+      {
+        "name": "Image_4",
+        "resolution": [
+          256,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 12514
+      },
+      {
+        "name": "Image_5",
+        "resolution": [
+          256,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 12176
+      },
+      {
+        "name": "Image_6",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 18838
+      },
+      {
+        "name": "Image_7",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 11952
+      },
+      {
+        "name": "Image_8",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 10874
+      },
+      {
+        "name": "Image_10",
+        "resolution": [
+          256,
+          256
+        ],
+        "mime": "image/webp",
+        "bytes": 17548
+      },
+      {
+        "name": "Image_11",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 2524
+      },
+      {
+        "name": "Image_12",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 11630
+      },
+      {
+        "name": "Image_13",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 9126
+      },
+      {
+        "name": "Image_14",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 4452
+      },
+      {
+        "name": "Image_15",
+        "resolution": [
+          256,
+          256
+        ],
+        "mime": "image/webp",
+        "bytes": 48060
+      },
+      {
+        "name": "Image_16",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 9258
+      },
+      {
+        "name": "Image_17",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 11994
+      },
+      {
+        "name": "Image_18",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 9478
+      },
+      {
+        "name": "Image_19",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 9172
+      },
+      {
+        "name": "Image_21",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 9196
+      },
+      {
+        "name": "Image_22",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 11624
+      },
+      {
+        "name": "Image_23",
+        "resolution": [
+          256,
+          256
+        ],
+        "mime": "image/webp",
+        "bytes": 48214
+      },
+      {
+        "name": "Image_24",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 10614
+      },
+      {
+        "name": "Image_25",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 8988
+      },
+      {
+        "name": "Image_26",
+        "resolution": [
+          256,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 23698
+      },
+      {
+        "name": "Image_27",
+        "resolution": [
+          128,
+          128
+        ],
+        "mime": "image/webp",
+        "bytes": 11866
+      },
+      {
+        "name": "Image_28",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 2830
+      },
+      {
+        "name": "Image_29",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 2486
+      },
+      {
+        "name": "Image_30",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 2618
+      },
+      {
+        "name": "Image_31",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 1848
+      },
+      {
+        "name": "Image_32",
+        "resolution": [
+          16,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 532
+      },
+      {
+        "name": "Image_33",
+        "resolution": [
+          64,
+          64
+        ],
+        "mime": "image/webp",
+        "bytes": 3032
+      }
+    ],
+    "sourceGeometry": {
+      "triangles": 9318,
+      "vertices": 12507,
+      "primitives": 36
+    },
+    "vertices": 12487,
+    "primitives": 35,
+    "materials": 35,
+    "animations": [],
+    "estimatedTextureBytesRGBAWithMips": 3467947,
+    "maxTextureSize": 1024,
+    "previews": {
+      "overview": "/previews/dust-classic-overview.webp",
+      "detail": "/previews/dust-classic-detail.webp"
+    },
+    "extensionsRequired": [
+      "EXT_meshopt_compression",
+      "EXT_texture_webp",
+      "KHR_mesh_quantization"
+    ]
+  },
+  {
+    "id": "operator-scarf",
+    "source": "csgo_terrorist_characters.glb",
+    "triangles": 21204,
+    "size": [
+      1.1303529739379883,
+      0.3907164931297302,
+      1.8199998140335083
+    ],
+    "height": 1.8199998135532949,
+    "scaleFromSource": 0.023392034792699357,
+    "blend": "F:\\ArenaLab\\contra\\art\\blender\\operator-scarf.blend",
+    "glb": "F:\\ArenaLab\\contra\\art\\staged\\operator-scarf.glb",
+    "feetAtZero": true,
+    "boundsBlender": {
+      "min": [
+        -0.5651764869689941,
+        -0.1953582465648651,
+        4.80213424580711e-10
+      ],
+      "max": [
+        0.5651764869689941,
+        0.19535823166370392,
+        1.8199998140335083
+      ]
+    },
+    "url": "/assets/models/operator-scarf.glb",
+    "bytes": 5343660,
+    "stagedBytes": 10399456,
+    "compressionRatio": 1.946,
+    "sourceTextures": [
+      {
+        "name": "Image_1",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1042287
+      },
+      {
+        "name": "Image_0",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 832549
+      },
+      {
+        "name": "Image_3",
+        "resolution": [
+          256,
+          512
+        ],
+        "mime": "image/png",
+        "bytes": 87737
+      },
+      {
+        "name": "Image_2",
+        "resolution": [
+          256,
+          512
+        ],
+        "mime": "image/png",
+        "bytes": 95142
+      },
+      {
+        "name": "Image_5",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 866293
+      },
+      {
+        "name": "Image_4",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 874061
+      },
+      {
+        "name": "Image_7",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1235857
+      },
+      {
+        "name": "Image_6",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1356954
+      },
+      {
+        "name": "Image_9",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1376743
+      },
+      {
+        "name": "Image_8",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1506931
+      }
+    ],
+    "textures": [
+      {
+        "name": "Image_1",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 857766
+      },
+      {
+        "name": "Image_0",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 189398
+      },
+      {
+        "name": "Image_3",
+        "resolution": [
+          256,
+          512
+        ],
+        "mime": "image/webp",
+        "bytes": 69366
+      },
+      {
+        "name": "Image_2",
+        "resolution": [
+          256,
+          512
+        ],
+        "mime": "image/webp",
+        "bytes": 17444
+      },
+      {
+        "name": "Image_5",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 711534
+      },
+      {
+        "name": "Image_4",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 204070
+      },
+      {
+        "name": "Image_7",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 1034506
+      },
+      {
+        "name": "Image_6",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 431654
+      },
+      {
+        "name": "Image_9",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 1134854
+      },
+      {
+        "name": "Image_8",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 371964
+      }
+    ],
+    "sourceGeometry": {
+      "triangles": 21204,
+      "vertices": 14811,
+      "primitives": 6
+    },
+    "vertices": 14807,
+    "primitives": 6,
+    "materials": 5,
+    "animations": [
+      "Idle_Ready"
+    ],
+    "estimatedTextureBytesRGBAWithMips": 46137344,
+    "maxTextureSize": 1024,
+    "previews": {
+      "full": "/previews/operator-scarf-full.webp",
+      "detail": "/previews/operator-scarf-detail.webp"
+    },
+    "extensionsRequired": [
+      "EXT_meshopt_compression",
+      "EXT_texture_webp",
+      "KHR_mesh_quantization"
+    ]
+  },
+  {
+    "id": "operator-covered",
+    "source": "cs2_terrorist.glb",
+    "triangles": 21316,
+    "size": [
+      1.1165157556533813,
+      0.4025490880012512,
+      1.8200000524520874
+    ],
+    "height": 1.8200000524520885,
+    "scaleFromSource": 0.6773286184885208,
+    "blend": "F:\\ArenaLab\\contra\\art\\blender\\operator-covered.blend",
+    "glb": "F:\\ArenaLab\\contra\\art\\staged\\operator-covered.glb",
+    "feetAtZero": true,
+    "boundsBlender": {
+      "min": [
+        -0.5582578778266907,
+        -0.2012745440006256,
+        -1.0231615901745705e-15
+      ],
+      "max": [
+        0.5582578778266907,
+        0.20127452909946442,
+        1.8200000524520874
+      ]
+    },
+    "url": "/assets/models/operator-covered.glb",
+    "bytes": 1489072,
+    "stagedBytes": 5299312,
+    "compressionRatio": 3.559,
+    "sourceTextures": [
+      {
+        "name": "Image_0",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1229436
+      },
+      {
+        "name": "Image_1",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1362230
+      },
+      {
+        "name": "Image_2",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/png",
+        "bytes": 1684218
+      }
+    ],
+    "textures": [
+      {
+        "name": "Image_0",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 354778
+      },
+      {
+        "name": "Image_1",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 417218
+      },
+      {
+        "name": "Image_2",
+        "resolution": [
+          1024,
+          1024
+        ],
+        "mime": "image/webp",
+        "bytes": 424478
+      }
+    ],
+    "sourceGeometry": {
+      "triangles": 21316,
+      "vertices": 14878,
+      "primitives": 5
+    },
+    "vertices": 14751,
+    "primitives": 5,
+    "materials": 5,
+    "animations": [
+      "Idle_Ready"
+    ],
+    "estimatedTextureBytesRGBAWithMips": 16777216,
+    "maxTextureSize": 1024,
+    "previews": {
+      "full": "/previews/operator-covered-full.webp",
+      "detail": "/previews/operator-covered-detail.webp"
+    },
+    "extensionsRequired": [
+      "EXT_meshopt_compression",
+      "EXT_texture_webp",
+      "KHR_mesh_quantization"
+    ]
+  }
+]

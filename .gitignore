@@ -1,0 +1,11 @@
+node_modules/
+dist/
+art/blender/
+art/staged/
+art/previews/
+art/browser-previews/
+art/benchmarks/
+*.log
+.env
+.env.*
+!.env.example

@@ -1,0 +1,11 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {build} from 'esbuild';
+const root=fileURLToPath(new URL('..',import.meta.url)),out=path.join(root,'dist/web');
+await fs.mkdir(out,{recursive:true});
+await fs.cp(path.join(root,'public'),out,{recursive:true,filter:p=>!p.startsWith(path.join(root,'public/vendor'))});
+await build({entryPoints:{app:path.join(root,'src/app.mjs'),showroom:path.join(root,'src/showroom.mjs')},bundle:true,format:'esm',splitting:true,minify:true,outdir:out,platform:'browser',target:'es2022',logLevel:'info'});
+await build({entryPoints:[path.join(root,'src/training-worker.mjs')],bundle:true,format:'esm',minify:true,outfile:path.join(out,'training-worker.js'),platform:'browser',target:'es2022',logLevel:'info'});
+await fs.writeFile(path.join(out,'config.json'),JSON.stringify({websocket:process.env.CONTRA_WEBSOCKET||''}));
+console.log('Contra browser build ready:',out);

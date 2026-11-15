@@ -1,0 +1,52 @@
+{
+  "id": "sandstone",
+  "format": "float32-le-triangle-soup",
+  "coordinates": "glTF world x,y,z; Y up; metres",
+  "axisFromBlender": [
+    "x",
+    "z",
+    "-y"
+  ],
+  "triangles": 68276,
+  "vertices": 204828,
+  "strideBytes": 12,
+  "triangleBytes": 36,
+  "bounds": {
+    "min": [
+      -55.74303436279297,
+      -4.174967216385994e-07,
+      -46.54670333862305
+    ],
+    "max": [
+      55.7430305480957,
+      16.358646392822266,
+      46.54669952392578
+    ]
+  },
+  "width": 111.48606491088867,
+  "depth": 93.09340286254883,
+  "height": 16.358646810318987,
+  "meshes": [
+    {
+      "name": "Cutout_2sided",
+      "triangles": 15173
+    },
+    {
+      "name": "LightMap_Mesh",
+      "triangles": 2887
+    },
+    {
+      "name": "Sandstone_Decals",
+      "triangles": 1013
+    },
+    {
+      "name": "Sandstone_one",
+      "triangles": 16674
+    },
+    {
+      "name": "Sandstone_two",
+      "triangles": 32529
+    }
+  ],
+  "source": "art/blender/sandstone.blend"
+}
