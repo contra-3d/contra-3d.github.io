@@ -3,7 +3,7 @@ services:
     name: contra-3d
     runtime: static
     repo: https://github.com/contra-3d/contra-3d.github.io
-    branch: main
+    branch: contra-render-mirror
     autoDeployTrigger: commit
     buildCommand: npx --yes pnpm@11.25.0 install --frozen-lockfile --prod=false && npm run build
     staticPublishPath: ./dist/web

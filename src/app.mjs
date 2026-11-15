@@ -19,7 +19,7 @@ const controls={forward:false,back:false,left:false,right:false,fire:false,reloa
 let map,templates={},world,meta,snapshot,myId,playing=false,ready=false,worker,ws,mode='menu',localActor,online=false,acc=0,last=performance.now(),eventId=0,hitUntil=0,lastInput=0,ping=0,frameCount=0,frameSum=0,fps=0,lastFps=performance.now(),firstView=true;
 let audio,hadPointerLock=false;const touch=matchMedia('(pointer:coarse)').matches;document.body.classList.toggle('touch',touch);
 const status=t=>$('status').textContent=t;
-const resize=()=>{const ratio=Math.min(devicePixelRatio||1,1.5,Math.sqrt(1500000/(innerWidth*innerHeight)));renderer.setPixelRatio(Math.max(.65,ratio));renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();};addEventListener('resize',resize);resize();
+const resize=()=>{const benchmark=params.has('benchmark'),width=benchmark?1280:innerWidth,height=benchmark?720:innerHeight;const ratio=benchmark?1:Math.min(devicePixelRatio||1,1.5,Math.sqrt(1500000/(width*height)));renderer.setPixelRatio(Math.max(.65,ratio));renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();};addEventListener('resize',resize);resize();
 const decorate=root=>root.traverse(o=>{if(o.isMesh){o.frustumCulled=true;const materials=Array.isArray(o.material)?o.material:[o.material];for(const material of materials){material.metalness=0;material.forceSinglePass=true;material.roughness=Math.max(.72,material.roughness||0);if(material.map)material.map.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());}}});
 async function load(){
  try{
