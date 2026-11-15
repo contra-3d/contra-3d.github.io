@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: contra-3d
+    runtime: static
+    repo: https://github.com/contra-3d/contra-3d.github.io
+    branch: main
+    autoDeployTrigger: commit
+    buildCommand: npx --yes pnpm@11.25.0 install --frozen-lockfile --prod=false && npm run build
+    staticPublishPath: ./dist/web
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: CONTRA_WEBSOCKET
+        value: wss://contra-3d-room.onrender.com/ws
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: same-origin
+      - path: /*
+        name: Cache-Control
+        value: no-cache
