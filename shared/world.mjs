@@ -1,5 +1,5 @@
-import { BufferGeometry, Float32BufferAttribute, Mesh, MeshBasicMaterial, Ray, Vector3 } from 'three';
-import { Octree } from 'three/addons/math/Octree.js';
+import { BufferGeometry, Float32BufferAttribute, Ray, Vector3, Box3, Line3, Triangle, FrontSide } from 'three';
+import { MeshBVH, SAH } from 'three-mesh-bvh';
 import { Capsule } from 'three/addons/math/Capsule.js';
 
 export const PLAYER = Object.freeze({ height: 1.82, radius: 0.32, eye: 1.65, speed: 3.8, gravity: 18, jump: 5.8, step: 0.35 });
@@ -19,21 +19,35 @@ export class CollisionWorld {
     if (!(triangles instanceof Float32Array)) triangles = new Float32Array(triangles || []);
     if (triangles.length % 9) throw new Error('Collision triangles must contain complete XYZ triangles.');
     for (let i = 0; i < triangles.length; i++) if (!Number.isFinite(triangles[i])) throw new Error('Invalid collision coordinate.');
-    this.octree = new Octree();
+    this.geometry = null;
+    this.bvh = null;
     this.bounds = options.bounds || { minX: -60, maxX: 60, minZ: -50, maxZ: 50, minY: -12, maxY: 30 };
     this.triangleCount = triangles.length / 9;
     if (triangles.length) {
       const geometry = new BufferGeometry();
       geometry.setAttribute('position', new Float32BufferAttribute(triangles, 3));
-      const material = new MeshBasicMaterial();
-      this.octree.fromGraphNode(new Mesh(geometry, material));
-      geometry.dispose();
-      material.dispose();
+      this.geometry = geometry;
+      this.bvh = new MeshBVH(geometry,{strategy:SAH,targetLeafSize:10});
     }
+    // Compatibility surface for the shared movement solver. The packed BVH keeps
+    // large ground triangles once, instead of duplicating them into octree cells.
+    this.octree = {capsuleIntersect:capsule=>this.capsuleIntersect(capsule)};
   }
 
   capsule(actor) {
     return new Capsule(new Vector3(actor.x, actor.y + PLAYER.radius, actor.z), new Vector3(actor.x, actor.y + PLAYER.height - PLAYER.radius, actor.z), PLAYER.radius);
+  }
+
+  capsuleIntersect(capsule){
+    if(!this.bvh)return false;
+    const segment=new Line3(capsule.start,capsule.end),box=new Box3().setFromPoints([capsule.start,capsule.end]).expandByScalar(capsule.radius);
+    const onTriangle=new Vector3(),onSegment=new Vector3();let deepest=0,normal=null;
+    this.bvh.shapecast({intersectsBounds:bounds=>bounds.intersectsBox(box),intersectsTriangle:triangle=>{
+      const distance=triangle.closestPointToSegment(segment,onTriangle,onSegment),depth=capsule.radius-distance;
+      if(depth>deepest){deepest=depth;normal=onSegment.clone().sub(onTriangle);if(normal.lengthSq()<1e-12)triangle.getNormal(normal);else normal.normalize();}
+      return false;
+    }});
+    return normal?{normal,depth:deepest}:false;
   }
 
   resolve(capsule) {
@@ -50,8 +64,12 @@ export class CollisionWorld {
   }
 
   raycast(origin, direction, maxDistance = 200) {
-    const hit = this.octree.rayIntersect(new Ray(new Vector3(origin.x, origin.y, origin.z), new Vector3(direction.x, direction.y, direction.z).normalize()));
-    return hit && hit.distance <= maxDistance ? hit : null;
+    if(!this.bvh)return null;
+    const hit=this.bvh.raycastFirst(new Ray(new Vector3(origin.x,origin.y,origin.z),new Vector3(direction.x,direction.y,direction.z).normalize()),FrontSide,0,maxDistance);
+    if(!hit)return null;
+    const triangle=new Triangle(),index=this.geometry.index,positions=this.geometry.attributes.position;
+    triangle.a.fromBufferAttribute(positions,index.getX(hit.faceIndex*3));triangle.b.fromBufferAttribute(positions,index.getX(hit.faceIndex*3+1));triangle.c.fromBufferAttribute(positions,index.getX(hit.faceIndex*3+2));
+    return {distance:hit.distance,position:hit.point,triangle};
   }
 
   floorPoint(point, searchHeight = 2.5, searchDepth = 8) {
