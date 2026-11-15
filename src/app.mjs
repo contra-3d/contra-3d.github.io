@@ -27,7 +27,7 @@ async function load(){
    loader.loadAsync('/assets/models/sandstone.glb'),loader.loadAsync('/assets/models/operator-scarf.glb'),loader.loadAsync('/assets/models/operator-covered.glb'),
    fetch('/assets/maps/sandstone-collision.bin').then(r=>r.arrayBuffer()),fetch('/assets/maps/sandstone-navigation-meta.json').then(r=>r.json())]);
   for(const model of [scarf,covered])if(model.animations.length){const mixer=new THREE.AnimationMixer(model.scene);mixer.clipAction(model.animations[0]).play();mixer.update(.01);model.scene.updateMatrixWorld(true);}
-  map=level.scene;decorate(map);scene.add(map);templates={blue:scarf,red:covered};meta=metadata;
+  map=level.scene;decorate(map);map.traverse(o=>{if(o.isMesh)for(const m of Array.isArray(o.material)?o.material:[o.material]){if(!/Decal/i.test(m.name)){m.transparent=false;m.alphaTest=.35;m.depthWrite=true;}else{m.depthWrite=false;m.polygonOffset=true;m.polygonOffsetFactor=-1;}}});scene.add(map);templates={blue:scarf,red:covered};meta=metadata;
   world=new CollisionWorld(new Float32Array(collision),{bounds:meta.bounds});
   makeSites();for(let i=0;i<2;i++){const a={id:'warm-'+i,team:i?'red':'blue',x:0,y:1,z:0},v=avatar(a);v.root.position.set(0,-100,0);}tracers[0].object.visible=true;weapon.visible=true;
   await renderer.compileAsync(scene,camera);tracers[0].object.visible=false;weapon.visible=false;for(const v of avatars.values())scene.remove(v.root);avatars.clear();
