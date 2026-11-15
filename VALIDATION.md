@@ -33,4 +33,6 @@
 
 ## Публикация
 
-https://contra-3d.onrender.com — Render deploy dep-dbsq8otg1s2s73ft94r0, статус live. Проверены HTTP200 для страницы, config.json, showroom.html и GLB карты. config.json подтверждает релиз e87e74696d574f3b48524241c88a56dc5f09554b и WSSадрес https://contra-3d-room.onrender.com. Backenddeploy dep-dbsq1dek1f9s739vgs0g также live. Для статического сайта сохранён совместимый deploy/build-static.mjs: Render использовал старую команду даже после изменения её в Blueprint.
+https://contra-3d.onrender.com — Render deploy dep-dbsqdve1egvs73ej3e6g, статус live. Проверены HTTP200 для страницы, config.json, showroom.html и GLB карты. config.json подтверждает релиз ba114653f2cadc45a76edd2ea9a360609e9c0de8 и WSSадрес wss://contra-3d-room.onrender.com/ws. Backenddeploy dep-dbsq1dek1f9s739vgs0g также live. Вход через кнопку на публичном сайте проверен в браузере:ОНЛАЙН,1человек,9ботов,бой и бомба продолжаются. Первое соединение с бесплатным сервером теперь может ожидать до90секунд, пока доступна локальная тренировка; после подключения клиент переходит в сетевой матч.
+
+Для статического сайта сохранён совместимый deploy/build-static.mjs: Render использовал старую команду даже после изменения её в Blueprint. Реальные скриншоты опубликованных моделей и матча:art/browser-previews/contra-character.jpg,contra-map.jpg,contra-published.jpg. Все эти файлы находятся в локальном проекте на F:.
